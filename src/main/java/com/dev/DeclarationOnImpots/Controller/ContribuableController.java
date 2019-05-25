@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IContribuable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ import com.dev.DeclarationOnImpots.Service.impl.ContribuableServiceImp;
 
 public class ContribuableController {
 	@Autowired
-	private ContribuableServiceImp contribuableService;
+	private IContribuable contribuableService;
 
 	@GetMapping(value = "/all")
 	public @ResponseBody List<Contribuable> getAllContribuables() {

@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IDeclarationExistence;
 import com.dev.DeclarationOnImpots.Service.impl.DeclarationExistenceServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import com.dev.DeclarationOnImpots.Entity.DeclarationExistence;
 
 public class DeclarationExistenceController {
 	@Autowired 
-	private DeclarationExistenceServiceImp decService;
+	private IDeclarationExistence decService;
 	
 	@GetMapping(value = "/all")
 	public @ResponseBody List<DeclarationExistence> getAllDeclarationExistences() {

@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IImpotsSociete;
 import com.dev.DeclarationOnImpots.Service.impl.ImpotsSocieteServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import com.dev.DeclarationOnImpots.Entity.ImpotsSociete;
 
 public class ImpotsSocieteController {
 	@Autowired
-	private ImpotsSocieteServiceImp impotsSocieteService;
+	private IImpotsSociete impotsSocieteService;
 
 	@GetMapping(value = "/all")
 	public @ResponseBody List<ImpotsSociete> getAllImpotsSocietes() {

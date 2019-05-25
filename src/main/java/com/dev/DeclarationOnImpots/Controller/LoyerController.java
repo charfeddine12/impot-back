@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.ILoyer;
 import com.dev.DeclarationOnImpots.Service.impl.LoyerServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import com.dev.DeclarationOnImpots.Entity.Loyer;
 
 public class LoyerController {
 	@Autowired
-	private LoyerServiceImp loyerService;
+	private ILoyer loyerService;
 
 	@GetMapping(value = "/all")
 	public @ResponseBody List<Loyer> getAllLoyers() {

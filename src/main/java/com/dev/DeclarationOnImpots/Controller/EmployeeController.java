@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IEmployee;
 import com.dev.DeclarationOnImpots.Service.impl.EmployeeServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import com.dev.DeclarationOnImpots.Entity.Employee;
 
 public class EmployeeController {
  @Autowired
- private EmployeeServiceImp employeeService;
+ private IEmployee employeeService;
  
  @GetMapping(value = "/all")
 	public @ResponseBody List<Employee> getAllEmployees() {

@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IExercice;
 import com.dev.DeclarationOnImpots.Service.impl.ExerciceServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import com.dev.DeclarationOnImpots.Entity.Exercice;
 
 public class ExerciceController {
 	@Autowired
-	private ExerciceServiceImp exerciceService;
+	private IExercice exerciceService;
 	@GetMapping(value = "/all")
 	public @ResponseBody List<Exercice> getAllExercices() {
 		return this.exerciceService.findAll();

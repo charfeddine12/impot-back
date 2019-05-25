@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
+import com.dev.DeclarationOnImpots.Service.IAdministrateur;
 import com.dev.DeclarationOnImpots.Service.impl.AdministrateurServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import com.dev.DeclarationOnImpots.Entity.Administrateur;
 @RequestMapping(value="administrateurs",headers = "Accept=application/json")
 public class AdministrateurController {
 @Autowired 
-private AdministrateurServiceImp adminService;
+private IAdministrateur adminService;
 
 @GetMapping(value = "/all")
 public @ResponseBody List<Administrateur> getAllAdministrateurs() {
