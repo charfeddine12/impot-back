@@ -7,13 +7,16 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.OneToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class Loyer implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id Long NumLoyer;
 	String Adresse;
 	Date DateDebutContrat;

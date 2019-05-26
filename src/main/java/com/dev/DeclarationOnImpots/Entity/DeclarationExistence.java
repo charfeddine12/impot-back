@@ -6,12 +6,14 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 @Entity 
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class DeclarationExistence /*extends DeclarationImpots*/ implements Serializable{
-	@Id
-	Long CodeDE;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id Long CodeDE;
 String RegimeImpots;
 String CodeTva;
 String AssujettissementTva;

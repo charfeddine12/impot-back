@@ -4,14 +4,25 @@ package com.dev.DeclarationOnImpots.Entity;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class ImpotsSociete /*extends DeclarationImpots */implements Serializable{
 
+<<<<<<< HEAD
 	@Id
 	Long ImpotsSocieteId;
+=======
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id Long ImpotsSocieteId;
+>>>>>>> cleaning classes
 	Double StockInitial;
 	Double StockFinEx;
 	Double ValAchatEx;

@@ -2,12 +2,13 @@ package com.dev.DeclarationOnImpots.Entity;
 
 
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 
 
 @Entity 
@@ -15,6 +16,10 @@ import javax.persistence.*;
 public class PersonnePhyz extends Contribuable  {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String Nom;
 	String Prenom;
 	Date DateNaissance;

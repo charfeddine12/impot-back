@@ -2,15 +2,19 @@ package com.dev.DeclarationOnImpots.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class DeclarationImpots implements Serializable {
- @Id Long IdDeclarationImpots ; 
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+@Id Long IdDeclarationImpots ; 
  String TypeDeclarationImpots;
  String Obligation;
  Date DateDeclarationImpots;

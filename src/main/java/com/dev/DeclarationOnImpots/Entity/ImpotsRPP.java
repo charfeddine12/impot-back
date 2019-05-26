@@ -6,15 +6,16 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.ManyToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class ImpotsRPP /*extends DeclarationImpots */implements Serializable {
-
-	@Id
-	Long ImpotsRPPId;
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+@Id Long ImpotsRPPId;
 	Double BeneficeCommerciauxIndustriels;
 	Double BeneficeProfessionNonCommercial;
 	Double BeneficeActiviteAgricole;

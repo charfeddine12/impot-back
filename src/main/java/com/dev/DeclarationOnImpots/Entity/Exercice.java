@@ -7,14 +7,19 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class Exercice /*extends DeclarationImpots */implements Serializable{
 
-	@Id
-	Long CodeEx;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id Long CodeEx;
 	Date DateOuverture;
 	Date DateCloture;
 	String CadreLegal;

@@ -4,10 +4,8 @@ package com.dev.DeclarationOnImpots.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.ManyToOne;
 
 
@@ -16,8 +14,16 @@ import javax.persistence.ManyToOne;
 public class Employee implements Serializable{
 
 	
+<<<<<<< HEAD
 @Id
 Long NumEmployee;
+=======
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+@Id	Long NumEmployee;
+>>>>>>> cleaning classes
 	String Poste;
 	Date DateDebutService;
 	Date DateFinService;
