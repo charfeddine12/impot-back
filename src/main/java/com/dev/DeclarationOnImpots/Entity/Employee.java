@@ -3,9 +3,10 @@ package com.dev.DeclarationOnImpots.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
-
-
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -14,10 +15,13 @@ public class Employee implements Serializable{
 
 	
 @Id
+
 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
 @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
-Long
-		NumEmployee;
+Long NumEmployee;
+
+	private static final long serialVersionUID = 1L;
+
 	String Poste;
 	Date DateDebutService;
 	Date DateFinService;

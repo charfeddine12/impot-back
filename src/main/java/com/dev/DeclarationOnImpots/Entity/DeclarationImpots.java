@@ -2,10 +2,13 @@ package com.dev.DeclarationOnImpots.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
@@ -14,6 +17,9 @@ public class DeclarationImpots implements Serializable {
  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
  @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
  Long IdDeclarationImpots ;
+
+	private static final long serialVersionUID = 1L;
+
  String TypeDeclarationImpots;
  String Obligation;
  Date DateDeclarationImpots;

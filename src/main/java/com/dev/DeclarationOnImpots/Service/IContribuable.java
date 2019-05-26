@@ -2,8 +2,6 @@ package com.dev.DeclarationOnImpots.Service;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.PathVariable;
-
 import com.dev.DeclarationOnImpots.Entity.Contribuable;
 
 

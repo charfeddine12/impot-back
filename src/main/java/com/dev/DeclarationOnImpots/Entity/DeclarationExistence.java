@@ -5,10 +5,15 @@ package com.dev.DeclarationOnImpots.Entity;
 import java.io.Serializable;
 
 import javax.persistence.*;
-
-@Entity
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity 
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class DeclarationExistence /*extends DeclarationImpots*/ implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
 	@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")

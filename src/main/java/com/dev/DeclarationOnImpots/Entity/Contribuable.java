@@ -4,18 +4,25 @@ package com.dev.DeclarationOnImpots.Entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.data.jpa.repository.Temporal;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import sun.jvm.hotspot.debugger.cdbg.basic.LazyType;
+
 
 @Entity
 
@@ -23,11 +30,14 @@ import sun.jvm.hotspot.debugger.cdbg.basic.LazyType;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS )
 public class Contribuable implements Serializable, UserDetails {
  
+	private static final long serialVersionUID = 1L;
+
 
 @Id
 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
 @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
 private long nif;
+
  private String login;
  private String password;
  private String email;
