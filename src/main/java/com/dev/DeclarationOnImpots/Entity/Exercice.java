@@ -13,7 +13,8 @@ import javax.persistence.*;
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class Exercice /*extends DeclarationImpots */implements Serializable{
 
-	@Id Long CodeEx;
+	@Id
+	Long CodeEx;
 	Date DateOuverture;
 	Date DateCloture;
 	String CadreLegal;

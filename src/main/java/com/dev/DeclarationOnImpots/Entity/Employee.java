@@ -16,7 +16,8 @@ import javax.persistence.ManyToOne;
 public class Employee implements Serializable{
 
 	
-@Id	Long NumEmployee;
+@Id
+Long NumEmployee;
 	String Poste;
 	Date DateDebutService;
 	Date DateFinService;

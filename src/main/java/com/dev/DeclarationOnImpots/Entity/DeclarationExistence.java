@@ -10,7 +10,8 @@ import javax.persistence.Inheritance;
 @Entity 
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class DeclarationExistence /*extends DeclarationImpots*/ implements Serializable{
-	@Id Long CodeDE;
+	@Id
+	Long CodeDE;
 String RegimeImpots;
 String CodeTva;
 String AssujettissementTva;

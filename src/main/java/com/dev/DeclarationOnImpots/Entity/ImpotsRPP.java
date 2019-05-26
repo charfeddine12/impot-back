@@ -12,7 +12,9 @@ import javax.persistence.ManyToOne;
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class ImpotsRPP /*extends DeclarationImpots */implements Serializable {
-@Id Long ImpotsRPPId;
+
+	@Id
+	Long ImpotsRPPId;
 	Double BeneficeCommerciauxIndustriels;
 	Double BeneficeProfessionNonCommercial;
 	Double BeneficeActiviteAgricole;

@@ -16,8 +16,8 @@ import com.dev.DeclarationOnImpots.Service.impl.ContribuableServiceImp;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value="contribuables",headers = "Accept=application/json")
-
 public class ContribuableController {
+
 	@Autowired
 	private IContribuable contribuableService;
 
@@ -25,8 +25,6 @@ public class ContribuableController {
 	public @ResponseBody List<Contribuable> getAllContribuables() {
 		return this.contribuableService.findAll();
 	}
-
-	
 
 	@PutMapping(value = "/updateStatus/{NIF}/{Status}")
 	public List<Contribuable> changeStatus(@PathVariable long NIF, @PathVariable String Status) {

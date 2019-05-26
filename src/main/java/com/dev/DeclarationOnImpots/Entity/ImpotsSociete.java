@@ -10,7 +10,8 @@ import javax.persistence.*;
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class ImpotsSociete /*extends DeclarationImpots */implements Serializable{
 
-	@Id Long ImpotsSocieteId;
+	@Id
+	Long ImpotsSocieteId;
 	Double StockInitial;
 	Double StockFinEx;
 	Double ValAchatEx;
@@ -19,15 +20,8 @@ public class ImpotsSociete /*extends DeclarationImpots */implements Serializable
 	Double CAglobalHTnonCommercial;
 	Double CAglobalHTConsSurPlace;
 	Double MontantPrime;
-	
 	String ResultatComptable;
 	String ResultatFiscal;
-	public Long getImpotsSocieteId() {
-		return ImpotsSocieteId;
-	}
-	public void setImpotsSocieteId(Long impotsSocieteId) {
-		ImpotsSocieteId = impotsSocieteId;
-	}
 	Double BenificesDeduits;
 	Double BeneficesNonImposables;
 	Double ImpotsDu;
@@ -41,6 +35,13 @@ public class ImpotsSociete /*extends DeclarationImpots */implements Serializable
 	Loyer loyer;
 	@ManyToOne
 	PersonneMorl personneMorl;
+	public Long getImpotsSocieteId() {
+		return ImpotsSocieteId;
+	}
+	public void setImpotsSocieteId(Long impotsSocieteId) {
+		ImpotsSocieteId = impotsSocieteId;
+	}
+
 
 	public Loyer getLoyer() {
 		return loyer;

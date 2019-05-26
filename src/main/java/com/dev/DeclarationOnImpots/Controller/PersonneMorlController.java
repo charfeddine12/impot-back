@@ -28,6 +28,7 @@ public class PersonneMorlController {
 	public PersonneMorl findOne(@PathVariable Long RegistreCommerce) {
 		return this.personneMorlService.findOne(RegistreCommerce);
 	}
+
 	@PostMapping(value = "/add")
 	public void addPersonneMorl(@RequestBody PersonneMorl pm ) {
 		this.personneMorlService.add(pm);
