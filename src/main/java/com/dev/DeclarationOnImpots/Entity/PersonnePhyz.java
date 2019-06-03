@@ -11,7 +11,6 @@ import javax.persistence.*;
 
 
 @Entity 
-//@Inheritance(strategy=InheritanceType.table_per_class)
 public class PersonnePhyz extends Contribuable  {
 
 	

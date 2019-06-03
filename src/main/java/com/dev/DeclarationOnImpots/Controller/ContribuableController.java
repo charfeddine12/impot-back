@@ -41,7 +41,6 @@ public class ContribuableController {
 	@PostMapping(value = "/add")
 	public void addContribuable(@RequestBody Contribuable c ) {
 		
-		
 
 		this.contribuableService.add(c);
 

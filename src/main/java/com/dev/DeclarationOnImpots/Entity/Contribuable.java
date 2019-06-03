@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.data.jpa.repository.Temporal;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,10 +20,14 @@ import sun.jvm.hotspot.debugger.cdbg.basic.LazyType;
 @Entity
 
 //@Inheritance(strategy=InheritanceType.table_per_class)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS )
 public class Contribuable implements Serializable, UserDetails {
  
 
-@Id	private long nif;
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
+private long nif;
  private String login;
  private String password;
  private String email;
@@ -32,7 +37,8 @@ private int numCnss;
 private String nationnalite;
 private String adresse;
 public String status;
-@OneToMany(fetch = FetchType.LAZY , mappedBy = "contribuable")
+@OneToMany(fetch = FetchType.EAGER , mappedBy = "contribuable")
+		@JsonIgnore
 	Set<DeclarationImpots> declarationImpots = new HashSet<>();
 
 

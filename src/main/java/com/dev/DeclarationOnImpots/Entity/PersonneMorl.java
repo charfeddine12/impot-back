@@ -11,7 +11,6 @@ import javax.persistence.*;
 
 
 @Entity 
-//@Inheritance(strategy=InheritanceType.table_per_class)
 public class PersonneMorl extends Contribuable  {
 	
 String RaisonSocial;
@@ -26,10 +25,10 @@ String assujettissement_impots;
 String generator_tva;
 String periodicite_acitivte;
 String periodicite_impots;
-	@OneToMany(fetch = FetchType.LAZY , mappedBy = "personneMorl")
+	@OneToMany(fetch = FetchType.EAGER , mappedBy = "personneMorl")
 	Set<Employee> employees = new HashSet<>();
 
-	@OneToMany(fetch = FetchType.LAZY , mappedBy = "personneMorl")
+	@OneToMany(fetch = FetchType.EAGER , mappedBy = "personneMorl")
 	Set<ImpotsSociete> impotsSocietes = new HashSet<>();
 
 	public Set<Employee> getEmployees() {
