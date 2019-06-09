@@ -47,4 +47,9 @@ public class PersonnePhyzController {
 		personnePhyzService.supprimer(Cin);
 		return true;
 	}
+	@PutMapping(value = "/updateStatus/{NIF}/{Status}")
+	public List<PersonnePhyz> changeStatus(@PathVariable long NIF, @PathVariable Boolean Status) {
+		this.personnePhyzService.changeStatus(NIF, Status);
+		return this.personnePhyzService.findAll();
+	}
 }

@@ -22,7 +22,7 @@ public class PersonnePhyz extends Contribuable  {
 	int NbrEnfHandicapeEncharge;
 	int NbreAutreEnf;
 
-	@OneToMany(fetch = FetchType.LAZY , mappedBy = "personnePhyz")
+	@OneToMany(fetch = FetchType.EAGER , mappedBy = "personnePhyz")
 	Set<ImpotsRPP> impotsRPPS = new HashSet<>();
 
 

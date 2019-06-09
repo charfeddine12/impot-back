@@ -36,7 +36,7 @@ public enum  categorie {personnePhysique, personneMorale};
 private int numCnss;
 private String nationnalite;
 private String adresse;
-public String status;
+public Boolean status;
 @OneToMany(fetch = FetchType.EAGER , mappedBy = "contribuable")
 		@JsonIgnore
 	Set<DeclarationImpots> declarationImpots = new HashSet<>();
@@ -119,33 +119,36 @@ public String getAdresse() {
 public void setAdresse(String adresse) {
 	this.adresse = adresse;
 }
-public String getStatus() {
-	return status;
-}
-public void setStatus(String status) {
-	this.status = status;
-}
-public Contribuable() {
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public Contribuable() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Contribuable(long nif, String login, String password, String email, Long tel, int numCnss,
-		String nationnalite, String adresse, String status) {
-	super();
-	this.nif = nif;
-	this.login = login;
-	this.password = password;
-	this.email = email;
-	this.tel = tel;
-	this.numCnss = numCnss;
-	this.nationnalite = nationnalite;
-	this.adresse = adresse;
-	this.status = status;
-}
+
 @Override
 public String getUsername() {
 	// TODO Auto-generated method stub
 	return null;
 }
 
+	public Contribuable(String login, String password, String email, Long tel, int numCnss, String nationnalite, String adresse,
+						Boolean status, Set<DeclarationImpots> declarationImpots) {
+		this.login = login;
+		this.password = password;
+		this.email = email;
+		this.tel = tel;
+		this.numCnss = numCnss;
+		this.nationnalite = nationnalite;
+		this.adresse = adresse;
+		this.status = status;
+		this.declarationImpots = declarationImpots;
+	}
 }

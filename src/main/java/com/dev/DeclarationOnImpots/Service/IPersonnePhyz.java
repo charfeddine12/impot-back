@@ -11,5 +11,6 @@ public interface IPersonnePhyz {
 	List<PersonnePhyz> findAll();
 	PersonnePhyz findOne(Long Cin);
 	public boolean supprimer(Long Cin);
+	void changeStatus(long NIF, Boolean status);
 
 }

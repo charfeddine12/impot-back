@@ -21,8 +21,8 @@ public interface PersonneMorlRepository extends JpaRepository<PersonneMorl,Long>
 	 PersonneMorl findUserWithName(String RaisonSocial);
 	 @Query("select c from PersonneMorl c where c.nif = ?1")
 	 PersonneMorl findOne(Long RegistreCommerce);
-	
-	
+
+
 	
 	
 }

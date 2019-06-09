@@ -41,6 +41,12 @@ public class PersonnePhyzServiceImp implements IPersonnePhyz {
 		personnePhyzRepository.deleteById(Cin);
 		return true;
 	}
-	
 
+	@Override
+	public void changeStatus(long NIF, Boolean status) {
+		PersonnePhyz personnePhyz = this.personnePhyzRepository.findOne(NIF);
+		personnePhyz.setStatus(true);
+		this.personnePhyzRepository.save(personnePhyz);
+
+	}
 }

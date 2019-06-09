@@ -40,5 +40,12 @@ public class PersonneMorlServiceImp implements IPersonneMorl {
 		personneMorlRepository.deleteById(RegistreCommerce);
 		return true;
 	}
+	@Override
+	public void changeStatus(long NIF, Boolean status) {
+		PersonneMorl personneMorl = this.personneMorlRepository.findOne(NIF);
+		personneMorl.setStatus(true);
+		this.personneMorlRepository.save(personneMorl);
+		this.personneMorlRepository.findOne(NIF);
 
+	}
 }

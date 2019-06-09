@@ -44,5 +44,9 @@ public class PersonneMorlController {
 		personneMorlService.supprimer(RegistreCommerce);
 		return true;
 	}
-
+	@PutMapping(value = "/updateStatus/{NIF}/{Status}")
+	public List<PersonneMorl> changeStatus(@PathVariable long NIF, @PathVariable Boolean Status) {
+		this.personneMorlService.changeStatus(NIF, Status);
+		return this.personneMorlService.findAll();
+	}
 }

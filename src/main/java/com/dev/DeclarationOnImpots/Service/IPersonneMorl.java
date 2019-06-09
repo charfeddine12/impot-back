@@ -11,5 +11,6 @@ public interface IPersonneMorl {
 	List<PersonneMorl> findAll();
 	PersonneMorl findOne(Long RegistreCommerce);
 	public boolean supprimer(Long RegistreCommerce);
+	void changeStatus(long NIF, Boolean status);
 
 }

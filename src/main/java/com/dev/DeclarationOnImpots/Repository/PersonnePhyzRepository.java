@@ -2,6 +2,7 @@ package com.dev.DeclarationOnImpots.Repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 
@@ -19,5 +20,5 @@ public interface PersonnePhyzRepository extends JpaRepository<PersonnePhyz,Long>
  PersonnePhyz findUserWithName(String nom);
  @Query("select c from PersonnePhyz c where c.nif = ?1")
  PersonnePhyz findOne(Long Cin);
- 
+
 }
