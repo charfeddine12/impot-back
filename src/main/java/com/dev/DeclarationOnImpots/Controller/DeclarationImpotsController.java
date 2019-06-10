@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dev.DeclarationOnImpots.Entity.Contribuable;
 import com.dev.DeclarationOnImpots.Entity.DeclarationImpots;
 import com.dev.DeclarationOnImpots.Service.IDeclarationImpots;
 
@@ -39,6 +40,11 @@ public DeclarationImpots findOne(@PathVariable Long IdDeclarationImpots) {
 public void addDeclarationImpots(@RequestBody DeclarationImpots l ) {
 
 	this.decService.add(l);
+}
+@PutMapping(value = "/updateStatus/{IdDeclarationImpots}/{Status}")
+public List<DeclarationImpots> changeStatus(@PathVariable long IdDeclarationImpots, @PathVariable String Status) {
+	this.decService.changeStatus(IdDeclarationImpots, Status);
+	return this.decService.findAll();
 }
 
 @PutMapping (value="/update")

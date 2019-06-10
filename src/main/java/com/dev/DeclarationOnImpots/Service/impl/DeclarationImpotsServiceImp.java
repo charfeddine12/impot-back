@@ -37,6 +37,11 @@ public class DeclarationImpotsServiceImp implements IDeclarationImpots {
 		
 		return this.decRepository.findOne(IdDeclarationImpots);
 	}
+	@Override
+	public void changeStatus(long IdDeclarationImpots, String status) {
+		this.decRepository.changeStatus(IdDeclarationImpots, status);
+		
+	}
 
 	@Override
 	public boolean supprimer(Long IdDeclarationImpots) {

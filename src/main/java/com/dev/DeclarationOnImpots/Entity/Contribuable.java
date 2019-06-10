@@ -27,6 +27,9 @@ import org.springframework.data.jpa.repository.Temporal;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+
 @Entity
 
 
