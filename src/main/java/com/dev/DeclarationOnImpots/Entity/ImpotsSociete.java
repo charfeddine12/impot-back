@@ -11,6 +11,8 @@ import javax.persistence.*;
 public class ImpotsSociete /*extends DeclarationImpots */implements Serializable{
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
 	Long ImpotsSocieteId;
 	Double StockInitial;
 	Double StockFinEx;

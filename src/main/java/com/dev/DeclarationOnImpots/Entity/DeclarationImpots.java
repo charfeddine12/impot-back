@@ -10,7 +10,10 @@ import javax.persistence.*;
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class DeclarationImpots implements Serializable {
- @Id Long IdDeclarationImpots ; 
+ @Id
+ @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+ @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
+ Long IdDeclarationImpots ;
  String TypeDeclarationImpots;
  String Obligation;
  Date DateDeclarationImpots;

@@ -14,11 +14,13 @@ import javax.persistence.*;
 public class Exercice /*extends DeclarationImpots */implements Serializable{
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
 	Long CodeEx;
 	Date DateOuverture;
 	Date DateCloture;
 	String CadreLegal;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER , mappedBy = "exercices")
 	Set<DeclarationImpots> declarationImpots = new HashSet<>();
 	public Exercice() {
 		super();

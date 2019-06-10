@@ -5,10 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -17,7 +14,10 @@ public class Employee implements Serializable{
 
 	
 @Id
-Long NumEmployee;
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
+Long
+		NumEmployee;
 	String Poste;
 	Date DateDebutService;
 	Date DateFinService;

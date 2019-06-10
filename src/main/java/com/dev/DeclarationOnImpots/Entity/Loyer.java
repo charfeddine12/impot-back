@@ -5,16 +5,16 @@ package com.dev.DeclarationOnImpots.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class Loyer implements Serializable{
 
-	@Id Long NumLoyer;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
+	Long NumLoyer;
 	String Adresse;
 	Date DateDebutContrat;
 	Date DateFinContrat;
