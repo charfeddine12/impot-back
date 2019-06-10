@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 // @Inheritance(strategy=InheritanceType.table_per_class)
 public class ImpotsSociete /* extends DeclarationImpots */ implements Serializable {
@@ -42,8 +44,8 @@ public class ImpotsSociete /* extends DeclarationImpots */ implements Serializab
 	@OneToOne
 	private Loyer loyer;
 	@ManyToOne
-	private PersonneMorl personneMorl;
-
+	@JsonIgnore
+	PersonneMorl personneMorl;
 	public Long getImpotsSocieteId() {
 		return ImpotsSocieteId;
 	}

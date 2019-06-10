@@ -10,4 +10,5 @@ public interface IDeclarationImpots {
 	List<DeclarationImpots> findAll();
 	DeclarationImpots findOne(Long IdDeclarationImpots);
 	public boolean supprimer(Long IdDeclarationImpots);
+	void changeStatus(long IdDeclarationImpots, String status);
 }
