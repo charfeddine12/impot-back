@@ -19,6 +19,7 @@ import com.dev.DeclarationOnImpots.Service.IPersonnePhyz;
 import com.dev.DeclarationOnImpots.Service.impl.PersonnePhyzServiceImp;
 
 
+
 @RestController
 @CrossOrigin
 @RequestMapping(value="personnePhyzs",headers = "Accept=application/json")

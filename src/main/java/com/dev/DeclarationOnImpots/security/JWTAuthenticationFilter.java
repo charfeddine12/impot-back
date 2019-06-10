@@ -15,7 +15,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.dev.DeclarationOnImpots.Entity.Contribuable;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 	
@@ -30,13 +34,13 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException{
-		Compte compte=null;
+		Contribuable contribuable=null;
 		try {
-		compte=new ObjectMapper().readValue(request.getInputStream(), Compte.class);
+			contribuable=new ObjectMapper().readValue(request.getInputStream(), Contribuable.class);
 		}catch(Exception e) {
 			throw new RuntimeException(e);
 		}
-		return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(compte.getCMPT_LOGIN(),compte.getCMPT_PWD()));
+		return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(contribuable.getUsername(),contribuable.getPassword()));
 	}
 	
 	@Override
