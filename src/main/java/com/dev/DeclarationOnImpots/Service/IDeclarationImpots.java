@@ -3,7 +3,6 @@ package com.dev.DeclarationOnImpots.Service;
 import java.util.List;
 
 import com.dev.DeclarationOnImpots.Entity.DeclarationImpots;
-import com.dev.DeclarationOnImpots.Entity.Employee;
 
 public interface IDeclarationImpots {
 	void add(DeclarationImpots dec);

@@ -1,12 +1,13 @@
 package com.dev.DeclarationOnImpots.Entity;
 
-
 import java.io.Serializable;
 import java.util.Date;
-
-
 import javax.persistence.*;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 //@Inheritance(strategy=InheritanceType.table_per_class)
@@ -14,21 +15,23 @@ public class Employee implements Serializable{
 
 	
 @Id
+
 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
 @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
-Long
-		NumEmployee;
-	String Poste;
-	Date DateDebutService;
-	Date DateFinService;
-	Double SalaireBrut;
-	Double PrivilegeNature;
-	Double TotalRevenuBrutImposable;
-	Double RevenuInvesti;
-	Double MontantReduits;
-	Double MontantNetPaye;
+
+	private Long NumEmployee;
+	private String Poste;
+	private Date DateDebutService;
+	private Date DateFinService;
+	private Double SalaireBrut;
+	private Double PrivilegeNature;
+	private Double TotalRevenuBrutImposable;
+	private Double RevenuInvesti;
+	private Double MontantReduits;
+	private Double MontantNetPaye;
+
 	@ManyToOne
-	PersonneMorl personneMorl;
+	private PersonneMorl personneMorl;
 
 	public PersonneMorl getPersonneMorl() {
 		return personneMorl;
@@ -70,7 +73,6 @@ Long
 		SalaireBrut = salaireBrut;
 	}
 
-
 	public Double getTotalRevenuBrutImposable() {
 		return TotalRevenuBrutImposable;
 	}
@@ -102,7 +104,6 @@ Long
 	public void setMontantNetPaye(Double montantNetPaye) {
 		MontantNetPaye = montantNetPaye;
 	}
-
 
 	public Double getPrivilegeNature() {
 		return PrivilegeNature;
@@ -140,9 +141,5 @@ Long
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-	
-	
 
 }

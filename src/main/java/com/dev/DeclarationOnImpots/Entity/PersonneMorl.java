@@ -1,18 +1,18 @@
 package com.dev.DeclarationOnImpots.Entity;
 
-
-
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 
+@Entity
+// @Inheritance(strategy=InheritanceType.table_per_class)
+public class PersonneMorl extends Contribuable {
 
-@Entity 
-public class PersonneMorl extends Contribuable  {
-	
+	private static final long serialVersionUID = 1L;
 String RaisonSocial;
 Date DateDebutActivite;
 String SecteurActivite;
@@ -29,6 +29,7 @@ String periodicite_impots;
 	Set<Employee> employees = new HashSet<>();
 
 	@OneToMany(fetch = FetchType.EAGER , mappedBy = "personneMorl")
+
 	Set<ImpotsSociete> impotsSocietes = new HashSet<>();
 
 	public Set<Employee> getEmployees() {
@@ -47,49 +48,60 @@ String periodicite_impots;
 		this.impotsSocietes = impotsSocietes;
 	}
 
-public String getRaisonSocial() {
-	return RaisonSocial;
-}
-public void setRaisonSocial(String raisonSocial) {
-	RaisonSocial = raisonSocial;
-}
-public Date getDateDebutActivite() {
-	return DateDebutActivite;
-}
-public void setDateDebutActivite(Date dateDebutActivite) {
-	DateDebutActivite = dateDebutActivite;
-}
-public String getSecteurActivite() {
-	return SecteurActivite;
-}
-public void setSecteurActivite(String secteurActivite) {
-	SecteurActivite = secteurActivite;
-}
-public String getActivite() {
-	return Activite;
-}
-public void setActivite(String activite) {
-	Activite = activite;
-}
-public Double getChiffreDaffaire() {
-	return ChiffreDaffaire;
-}
-public void setChiffreDaffaire(Double chiffreDaffaire) {
-	ChiffreDaffaire = chiffreDaffaire;
-}
-public PersonneMorl( String raisonSocial, Date dateDebutActivite, String secteurActivite,
-		String activite, Double chiffreDaffaire) {
-	super();
-	RaisonSocial = raisonSocial;
-	DateDebutActivite = dateDebutActivite;
-	SecteurActivite = secteurActivite;
-	Activite = activite;
-	ChiffreDaffaire = chiffreDaffaire;
-}
-public PersonneMorl() {
-	super();
-	// TODO Auto-generated constructor stub
-}
+	public String getRaisonSocial() {
+		return RaisonSocial;
+	}
+
+	public void setRaisonSocial(String raisonSocial) {
+		RaisonSocial = raisonSocial;
+	}
+
+	public Date getDateDebutActivite() {
+		return DateDebutActivite;
+	}
+
+	public void setDateDebutActivite(Date dateDebutActivite) {
+		DateDebutActivite = dateDebutActivite;
+	}
+
+	public String getSecteurActivite() {
+		return SecteurActivite;
+	}
+
+	public void setSecteurActivite(String secteurActivite) {
+		SecteurActivite = secteurActivite;
+	}
+
+	public String getActivite() {
+		return Activite;
+	}
+
+	public void setActivite(String activite) {
+		Activite = activite;
+	}
+
+	public Double getChiffreDaffaire() {
+		return ChiffreDaffaire;
+	}
+
+	public void setChiffreDaffaire(Double chiffreDaffaire) {
+		ChiffreDaffaire = chiffreDaffaire;
+	}
+
+	public PersonneMorl(String raisonSocial, Date dateDebutActivite, String secteurActivite, String activite,
+			Double chiffreDaffaire) {
+		super();
+		RaisonSocial = raisonSocial;
+		DateDebutActivite = dateDebutActivite;
+		SecteurActivite = secteurActivite;
+		Activite = activite;
+		ChiffreDaffaire = chiffreDaffaire;
+	}
+
+	public PersonneMorl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getRegime_impot() {
 		return regime_impot;
@@ -149,20 +161,12 @@ public PersonneMorl() {
 
 	@Override
 	public String toString() {
-		return "PersonneMorl{" +
-				", RaisonSocial='" + RaisonSocial + '\'' +
-				", DateDebutActivite=" + DateDebutActivite +
-				", SecteurActivite='" + SecteurActivite + '\'' +
-				", Activite='" + Activite + '\'' +
-				", ChiffreDaffaire=" + ChiffreDaffaire +
-				", regime_impot='" + regime_impot + '\'' +
-				", code_tva='" + code_tva + '\'' +
-				", assujettissement_tva='" + assujettissement_tva + '\'' +
-				", assujettissement_impots='" + assujettissement_impots + '\'' +
-				", generator_tva='" + generator_tva + '\'' +
-				", periodicite_acitivte='" + periodicite_acitivte + '\'' +
-				", periodicite_impots='" + periodicite_impots + '\'' +
-				", status='" + status + '\'' +
-				'}';
+		return "PersonneMorl{" + ", RaisonSocial='" + RaisonSocial + '\'' + ", DateDebutActivite=" + DateDebutActivite
+				+ ", SecteurActivite='" + SecteurActivite + '\'' + ", Activite='" + Activite + '\''
+				+ ", ChiffreDaffaire=" + ChiffreDaffaire + ", regime_impot='" + regime_impot + '\'' + ", code_tva='"
+				+ code_tva + '\'' + ", assujettissement_tva='" + assujettissement_tva + '\''
+				+ ", assujettissement_impots='" + assujettissement_impots + '\'' + ", generator_tva='" + generator_tva
+				+ '\'' + ", periodicite_acitivte='" + periodicite_acitivte + '\'' + ", periodicite_impots='"
+				+ periodicite_impots + '\'' + ", status='" + status + '\'' + '}';
 	}
 }

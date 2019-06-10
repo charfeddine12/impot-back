@@ -3,17 +3,23 @@ package com.dev.DeclarationOnImpots.Entity;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 @Entity 
 //@Inheritance(strategy=InheritanceType.table_per_class)
 public class Administrateur /* extends Contribuable*/ implements Serializable{
 
-	@Id Long CodeAdmin;
-	String Mission;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long CodeAdmin;
+	private String Mission;
 	public Long getCodeAdmin() {
 		return CodeAdmin;
 	}

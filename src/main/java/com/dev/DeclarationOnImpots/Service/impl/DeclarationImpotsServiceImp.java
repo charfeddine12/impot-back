@@ -2,13 +2,12 @@ package com.dev.DeclarationOnImpots.Service.impl;
 
 import java.util.List;
 
-import com.dev.DeclarationOnImpots.Service.IDeclarationImpots;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dev.DeclarationOnImpots.Entity.DeclarationImpots;
-import com.dev.DeclarationOnImpots.Entity.Employee;
 import com.dev.DeclarationOnImpots.Repository.DeclarationImpotsRepository;
+import com.dev.DeclarationOnImpots.Service.IDeclarationImpots;
 
 @Service
 public class DeclarationImpotsServiceImp implements IDeclarationImpots {

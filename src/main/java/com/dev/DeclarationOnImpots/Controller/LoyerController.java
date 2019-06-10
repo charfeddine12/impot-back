@@ -2,12 +2,20 @@ package com.dev.DeclarationOnImpots.Controller;
 
 import java.util.List;
 
-import com.dev.DeclarationOnImpots.Service.ILoyer;
-import com.dev.DeclarationOnImpots.Service.impl.LoyerServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.dev.DeclarationOnImpots.Entity.Loyer;
+import com.dev.DeclarationOnImpots.Service.ILoyer;
 
 
 @RestController

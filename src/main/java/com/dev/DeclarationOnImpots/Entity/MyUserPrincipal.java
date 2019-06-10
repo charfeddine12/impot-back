@@ -1,16 +1,16 @@
 package com.dev.DeclarationOnImpots.Entity;
 
-import java.io.Serializable;
 import java.util.Collection;
 
-import javax.persistence.Entity;
-
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class MyUserPrincipal implements UserDetails  {
-    private Contribuable user;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Contribuable user;
  
     public MyUserPrincipal(Contribuable contribuable) {
         this.setUser(contribuable);
